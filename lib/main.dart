@@ -19,7 +19,8 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
 
       home: BlocProvider(
-        create: (context) => SessionBloc(GetSessions(SessionRepository()))..add(const LoadSessions()),
+        create: (context) =>
+            SessionBloc(GetSessions(SessionRepository()))..add(const LoadSessions()),
         child: const SessionScreen(),
       ),
     );
