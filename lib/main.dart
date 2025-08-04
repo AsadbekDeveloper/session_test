@@ -4,6 +4,7 @@ import 'package:session_test/data/repositories/session_repository.dart';
 import 'package:session_test/domain/usecases/get_sessions.dart';
 import 'package:session_test/presentation/bloc/session_bloc.dart';
 import 'package:session_test/presentation/screens/session_screen.dart';
+import 'package:session_test/presentation/theme/app_theme.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Session App',
       debugShowCheckedModeBanner: false,
-
+      theme: AppTheme.lightTheme,
       home: BlocProvider(
         create: (context) =>
             SessionBloc(GetSessions(SessionRepository()))..add(const LoadSessions()),
